@@ -27,6 +27,10 @@ function requireAll(requireContext) {
  * feel free to replace it by your own
  */
 function loadStories() {
+  // `require.context` is a webpack feature
+  // https://github.com/webpack/docs/wiki/context#requirecontext
+  //
+  // require.context(directory, useSubdirectories = false, regExp = /^\.\//);
   requireAll(require.context("../src", true, /_story\.jsx?$/));
 }
 
