@@ -4,13 +4,12 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 import Card from "./Card";
+import Button from "./Button";
 
 storiesOf("Card", module)
-  .add("with text", () => <Card>Hello Button</Card>)
+  .add("with text", () => <Card>Hello Card</Card>)
   .add("with children", () => (
-    <Card onClick={action("clicked")}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
+    <Card>
+      <Button onClick={action("clicked")}>Some Button</Button>
     </Card>
   ));
