@@ -2,7 +2,7 @@
 
 using `create-react-app@1.5.2` and `storybook@3.4.1` to load multiple stories at once
 
-* all you need is [`./storybook/config.js`](./storybook/config.js)
+* all you need is [`./.storybook/config.js`](./.storybook/config.js)
 
 steps to reproduce it:
 
