@@ -1,38 +1,33 @@
-# create-react-app@1.5.2 and @storybook/cli@3.4.1
+# create-react-app@3.4.0 and @storybook/cli@5.3.14
 
-using `create-react-app@1.5.2` and `storybook@3.4.1` to load multiple stories at once
+using `create-react-app@3.4.0` and `storybook@5.3.14` to load multiple stories at once
 
-* all you need is [`./.storybook/config.js`](./.storybook/config.js)
+storybook create a preset for [create-react-app integration](https://github.com/storybookjs/presets/tree/master/packages/preset-create-react-app)
 
-steps to reproduce it:
+this repository is based on the [manual steps for react guide from storybook](https://storybook.js.org/docs/guides/guide-react/),
+
+to reproduce it, you can do:
 
 ```bash
-$ npx create-react-app my-app
-$ cd my-app
-$ npx @storybook/cli@3.4.1 getstorybook
-$ vim ./storybook/config.js
+npx create-react-app my-app
+cd my-app
+npm install --save-dev @storybook/react @storybook/preset-create-react-app
+
+# some nice addons
+npm install --save-dev @storybook/addon-actions @storybook/addon-links
 ```
 
-replace its contents by the following:
+and last, but not least, create `.storybook/main.js`:
 
 ```javascript
-import { configure } from "@storybook/react";
-
-function requireAll(requireContext) {
-  return requireContext.keys().map(requireContext);
-}
-
-/**
- * here is where you change the load glob for `storybook`
- * feel free to replace it by your own
- */
-function loadStories() {
-  // `require.context` is a webpack feature
-  // https://github.com/webpack/docs/wiki/context#requirecontext
-  //
-  // require.context(directory, useSubdirectories = false, regExp = /^\.\//);
-  requireAll(require.context("../src", true, /_story\.jsx?$/));
-}
-
-configure(loadStories, module);
+module.exports = {
+  stories: ['../src/**/*.stories.[tj]s'],
+  addons: [
+    '@storybook/preset-create-react-app',
+    '@storybook/addon-actions',
+    '@storybook/addon-links',
+  ],
+};
 ```
+
+and you are good to go! 🥳
