@@ -31,3 +31,9 @@ module.exports = {
 ```
 
 and you are good to go! 🥳
+
+# 📜 Previous Version
+
+Looking for previous version of create-react-app and storybook?
+
+Check [create-react-app@1.5.2 and @storybook/cli@3.4.1](https://github.com/oieduardorabelo/cra-and-storybook/tree/with-previous-version) tag! 🚀
