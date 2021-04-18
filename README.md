@@ -12,4 +12,5 @@ clone this repository and you are good to go! 🥳
 
 Looking for previous version of create-react-app and storybook?
 
+- [create-react-app@3.4.0 and @storybook/cli@5.3.14](https://github.com/oieduardorabelo/cra-and-storybook/tree/v2)
 - [create-react-app@1.1.4 and @storybook/cli@3.4.1](https://github.com/oieduardorabelo/cra-and-storybook/tree/v1)
